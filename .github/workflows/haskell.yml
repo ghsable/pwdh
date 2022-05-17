@@ -8,6 +8,7 @@ on:
     paths:
       - 'pwdh.cabal'
       - 'app/**'
+      - '.github/workflows/haskell.yml'
 
 permissions:
   contents: read
