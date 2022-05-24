@@ -24,7 +24,7 @@ If no option is specified, -P is assumed.
 
 ## Example
 ```console
-[user@host:/home]$ pwdh
+[user@host:/home]$ pwdh -P
 /home
 ```
 
