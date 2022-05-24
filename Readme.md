@@ -8,6 +8,20 @@ pwdh is pwd written by [Haskell](https://www.haskell.org/).
 $ cabal install pwdh-0.1.0.0
 ```
 
+## Usage
+```console
+$ pwdh --help
+Print the full filename of the current working directory.
+
+-P, --physical  avoid all symlinks
+
+    --help      display this help and exit
+
+    --version   output version information and exit
+
+If no option is specified, -P is assumed.
+```
+
 ## Example
 ```console
 [user@host:/home]$ pwdh
