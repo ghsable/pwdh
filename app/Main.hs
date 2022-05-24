@@ -2,7 +2,7 @@
 
 module Main where
 
-import System.Directory (getCurrentDirectory)
+import qualified Lib (getPutStr)
 
 main :: IO ()
-main = putStrLn =<< getCurrentDirectory
+main = putStrLn =<< Lib.getPutStr
