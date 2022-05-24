@@ -1,7 +1,8 @@
 -- SPDX-License-Identifier: BSD-3-Clause
 
-module Lib (getPutStr) where
+module Lib (getPutStr, getOption) where
 
+import Data.List (length, head)                -- base
 import System.Directory (getCurrentDirectory)  -- directory
 
 getPutStr :: (Int, String) -> IO String
@@ -24,3 +25,9 @@ getPutStr (len, opt) =
     (1, "--version")  -> return "pwdh 0.1.0.0 created by dativus"
     (1, _)            -> return $ "pwdh: bad option: " ++ snd (len, opt)
     _                 -> return "pwdh: too many arguments"
+
+getOption :: [String] -> IO (Int, String)
+getOption args =
+  case args of
+    [] -> return (0, "")
+    _  -> return (length args, head args)
