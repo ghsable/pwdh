@@ -2,7 +2,25 @@
 
 module Lib (getPutStr) where
 
-import System.Directory (getCurrentDirectory)
+import System.Directory (getCurrentDirectory)  -- directory
 
-getPutStr :: IO String
-getPutStr = getCurrentDirectory
+getPutStr :: (Int, String) -> IO String
+getPutStr (len, opt) =
+  case (len, opt) of
+    (0, _)            -> getCurrentDirectory
+    (1, "-L")         -> return "pwdh: no such option: -L"
+    (1, "--logical")  -> return "pwdh: no such option: --logical"
+    (1, "-P")         -> getCurrentDirectory
+    (1, "--physical") -> getCurrentDirectory
+    (1, "--help")     -> return "Print the full filename of the current working directory.\n\
+                                 \\n\
+                                 \-P, --physical  avoid all symlinks\n\
+                                 \\n\
+                                 \    --help      display this help and exit\n\
+                                 \\n\
+                                 \    --version   output version information and exit\n\
+                                 \\n\
+                                 \If no option is specified, -P is assumed.\n"
+    (1, "--version")  -> return "pwdh 0.1.0.0 created by dativus"
+    (1, _)            -> return $ "pwdh: bad option: " ++ snd (len, opt)
+    _                 -> return "pwdh: too many arguments"
