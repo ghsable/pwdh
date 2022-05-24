@@ -15,4 +15,4 @@ $ cabal install pwdh
 ```
 
 ## License
-[MIT License](https://spdx.org/licenses/MIT.html)
+[BSD-3-Clause](https://spdx.org/licenses/BSD-3-Clause.html)
