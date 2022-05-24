@@ -1,8 +1,9 @@
 -- SPDX-License-Identifier: BSD-3-Clause
 
-module Lib (getPutStr, getOption) where
+module Lib (getPutStr, getOption, getArgs') where
 
 import Data.List (length, head)                -- base
+import System.Environment (getArgs)            -- base
 import System.Directory (getCurrentDirectory)  -- directory
 
 getPutStr :: (Int, String) -> IO String
@@ -31,3 +32,6 @@ getOption args =
   case args of
     [] -> return (0, "")
     _  -> return (length args, head args)
+
+getArgs' :: IO [String]
+getArgs' = getArgs

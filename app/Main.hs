@@ -2,8 +2,9 @@
 
 module Main where
 
-import qualified Lib (getPutStr, getOption)
+import qualified Lib (getPutStr, getOption, getArgs')
 
 main :: IO ()
 main = putStrLn =<< Lib.getPutStr
                 =<< Lib.getOption
+                =<< Lib.getArgs'
