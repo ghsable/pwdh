@@ -24,7 +24,6 @@ getPutStr (len, opt) =
                                  \\n\
                                  \If no option is specified, -P is assumed.\n"
     (1, "--version")  -> return "pwdh 0.1.0.0 created by dativus"
-    --(1, _)            -> return $ "pwdh: bad option: " ++ snd (len, opt)
     (1, _)            -> return $ "pwdh: bad option: " ++ opt
     _                 -> return "pwdh: too many arguments"
 
