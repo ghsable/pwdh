@@ -9,6 +9,7 @@ on:
       - 'pwdh.cabal'
       - 'cabal.project'
       - 'app/**'
+      - 'src/**'
       - '.github/workflows/haskell.yml'
 
 permissions:
