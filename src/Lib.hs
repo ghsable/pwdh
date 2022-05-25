@@ -29,9 +29,12 @@ getPutStr (len, opt) =
 
 getOption :: [String] -> IO (Int, String)
 getOption args =
-  case args of
-    [] -> return (0, "")
-    _  -> return (length args, head args)
+  case len of
+    0 -> return (len, "")
+    1 -> return (len, opt)
+    _ -> return (len, "too-many-arguments")
+  where len = length args
+        opt = head args
 
 getArgs' :: IO [String]
 getArgs' = getArgs
