@@ -10,8 +10,8 @@ getPutStr :: (Int, String) -> IO String
 getPutStr (len, opt) =
   case (len, opt) of
     (0, _)            -> getCurrentDirectory
-    (1, "-L")         -> return "pwdh: no such option: -L"
-    (1, "--logical")  -> return "pwdh: no such option: --logical"
+    (1, "-L")         -> return $ "pwdh: no such option: " ++ opt
+    (1, "--logical")  -> return $ "pwdh: no such option: " ++ opt
     (1, "-P")         -> getCurrentDirectory
     (1, "--physical") -> getCurrentDirectory
     (1, "--help")     -> return "Print the full filename of the current working directory.\n\
@@ -24,7 +24,8 @@ getPutStr (len, opt) =
                                  \\n\
                                  \If no option is specified, -P is assumed.\n"
     (1, "--version")  -> return "pwdh 0.1.0.0 created by dativus"
-    (1, _)            -> return $ "pwdh: bad option: " ++ snd (len, opt)
+    --(1, _)            -> return $ "pwdh: bad option: " ++ snd (len, opt)
+    (1, _)            -> return $ "pwdh: bad option: " ++ opt
     _                 -> return "pwdh: too many arguments"
 
 getOption :: [String] -> IO (Int, String)
