@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - 'pwdh.cabal'
+      - 'cabal.project'
       - 'app/**'
       - '.github/workflows/haskell.yml'
 
