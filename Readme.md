@@ -5,7 +5,7 @@ pwdh is pwd written by [Haskell](https://www.haskell.org/).
 
 ## Installation
 ```console
-$ cabal install pwdh-0.1.0.0
+$ cabal install pwdh-0.2.0.0
 ```
 
 ## Usage

@@ -32,7 +32,7 @@ spec = do
       f `shouldBe` "Print the full filename of the current working directory.\n\n-P, --physical  avoid all symlinks\n\n    --help      display this help and exit\n\n    --version   output version information and exit\n\nIf no option is specified, -P is assumed.\n"
 
       g <- Lib.getPutStr (1, "--version")
-      g `shouldBe` "pwdh 0.1.0.0 created by dativus"
+      g `shouldBe` "pwdh 0.2.0.0 created by dativus"
 
       h <- Lib.getPutStr (1, "-Z")
       h `shouldBe` "pwdh: bad option: -Z"
