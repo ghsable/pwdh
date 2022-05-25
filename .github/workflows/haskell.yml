@@ -10,6 +10,7 @@ on:
       - 'cabal.project'
       - 'app/**'
       - 'src/**'
+      - 'test/**'
       - '.github/workflows/haskell.yml'
 
 permissions:
