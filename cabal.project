@@ -1,0 +1,5 @@
+packages:
+  pwdh.cabal
+
+package pwdh
+  ghc-options: -Werror
