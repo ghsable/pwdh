@@ -22,7 +22,7 @@ getPutStr (len, opt) =
                                  \    --version   output version information and exit\n\
                                  \\n\
                                  \If no option is specified, -P is assumed.\n"
-    (1, "--version")  -> return "pwdh 0.2.0.0 created by dativus"
+    (1, "--version")  -> return "pwdh 0.3.0.0 created by dativus"
     (1, _)            -> return $ "pwdh: bad option: " ++ opt
     _                 -> return "pwdh: too many arguments"
 
