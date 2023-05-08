@@ -26,7 +26,7 @@ getPutStr (len, opt)
 getOption :: [String] -> IO (Int, String)
 getOption []      = return (0, "")
 getOption [opt]   = return (1, opt)
-getOption (_:_:_) = return (2, "too many arguments")
+getOption (_:_:_) = return (2, "")
 
 getArgs' :: IO [String]
 getArgs' = getArgs
