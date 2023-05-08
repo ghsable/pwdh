@@ -2,7 +2,6 @@
 
 module Lib (getPutStr, getOption, getArgs') where
 
-import Data.List (length, head)                -- base
 import System.Environment (getArgs)            -- base
 import System.Directory (getCurrentDirectory)  -- directory
 
@@ -28,13 +27,9 @@ getPutStr (len, opt) =
     _                 -> return "pwdh: too many arguments"
 
 getOption :: [String] -> IO (Int, String)
-getOption args =
-  case len of
-    0 -> return (len, "")
-    1 -> return (len, opt)
-    _ -> return (len, "too-many-arguments")
-  where len = length args
-        opt = head args
+getOption []      = return (0, "")
+getOption [opt]   = return (1, opt)
+getOption (_:_:_) = return (2, "too-many-arguments")
 
 getArgs' :: IO [String]
 getArgs' = getArgs
