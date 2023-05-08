@@ -1,6 +1,7 @@
 # Revision history for pwdh
 
 ## 0.2.1.0 -- 2023-05-08
+## 0.2.1.1 -- 2023-05-08
 
 * Minor update.
 
