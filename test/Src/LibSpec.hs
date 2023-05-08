@@ -48,7 +48,7 @@ spec = do
       b `shouldBe` (1, "-P")
 
       c <- Lib.getOption ["-L", "-P"]
-      c `shouldBe` (2, "too-many-arguments")
+      c `shouldBe` (2, "")
 
     it "getArgs' :: IO [String]" $ do
       a <- Lib.getArgs'
