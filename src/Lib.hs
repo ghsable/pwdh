@@ -24,9 +24,10 @@ getPutStr (len, opt)
   | otherwise             = return $ "pwdh: bad option: " ++ opt
 
 getOption :: [String] -> IO (Int, String)
-getOption []      = return (0, "")
-getOption [opt]   = return (1, opt)
-getOption (_:_:_) = return (2, "")
+getOption args
+  | null args     = return (0, "")
+  | [opt] <- args = return (1, opt)
+  | otherwise     = return (2, "")
 
 getArgs' :: IO [String]
 getArgs' = getArgs
