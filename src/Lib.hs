@@ -20,7 +20,7 @@ getPutStr (len, opt)
                                    \    --version   output version information and exit\n\
                                    \\n\
                                    \If no option is specified, -P is assumed.\n"
-  | opt == "--version"    = return "pwdh 0.3.0.0 created by dativus"
+  | opt == "--version"    = return "pwdh 0.2.1.0 created by dativus"
   | otherwise             = return $ "pwdh: bad option: " ++ opt
 
 getOption :: [String] -> IO (Int, String)
